@@ -1,0 +1,424 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2b3035; 
+    color: #fff;
+    font-size: 14px;
+}
+.container {
+    width: 85%;
+    max-width: 1140px;
+    margin: auto;
+}
+/*  (Navbar) */
+#main-navbar {
+    background-color: #22252a; 
+    padding: 15px 0;
+    position: static; 
+    width: 100%;
+    z-index: 1000;
+}
+#main-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    display: block; 
+}
+.logo i {
+    font-size: 32px;
+    margin-right: 10px;
+    color: #009ad8;
+    float: left; 
+    margin-top: 5px;
+}
+.logo .tagline {
+    display: block; 
+    font-size: 10px;
+    font-weight: normal;
+    opacity: 0.7;
+    margin-top: -5px;
+    clear: both; 
+    margin-left: 50px ;
+}
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent; 
+    border-radius: 30px; 
+}
+.nav-item.home-active, 
+.nav-item.active-page { 
+    background-color: #009ad8; 
+    border-color: #009ad8;
+}
+.nav-item:not(.home-active):not(.active-page):hover {
+    background-color: #009ad8; 
+    border-color: #009ad8;
+}
+.nav-item.dotted-border {
+    border: 1px dotted #009ad8 !important; 
+    background-color: transparent !important;
+    transition: border 0.5s ease-out; 
+}
+/* ================================================design home page============================================ */
+
+.weather-hero {
+    min-height: 450px; 
+    background: url(../images/banner.png) no-repeat center bottom/cover; 
+    padding-top: 50px; 
+    padding-bottom: 50px; 
+    position: relative;
+}
+
+.search-box {
+    position: absolute; 
+    bottom: 300px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    max-width: 1000px; 
+    width: 90%;
+    background-color: #1e202b; 
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 5px;
+    z-index: 50;
+    margin-left: auto; 
+    margin-right: auto;
+}
+#cityInput {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 20px;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+#findBtn {
+    background-color: #009ad8;
+    border: none;
+    color: white;
+    padding: 12px 30px; 
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.weather-section {
+    background-color: transparent; 
+    padding-top: 0;
+    padding-bottom: 200px; 
+    margin-top: -280px; 
+    position: relative;
+    z-index: 10;
+}
+
+/* design card el weather*/
+
+.weather-cards-container {
+    display: flex;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.5);
+    background-color: #262933; 
+}
+
+.weather-card {
+    flex: 1;
+    min-width: 33.333%; 
+    color: #fff;
+    padding: 0; 
+    box-sizing: border-box;
+    background-color: transparent; 
+    border-right: 1px solid rgba(0, 0, 0, 0.2); 
+    
+    /* design hover card*/
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+    border: 1px solid transparent; 
+}
+.weather-card:hover {
+    border-color: #009ad8; 
+    box-shadow: 0 0 10px rgba(0, 154, 216, 0.5); 
+    cursor: pointer;
+}
+
+
+.weather-card:last-child {
+    border-right: none; 
+}
+
+/* ===========design day and date */
+.weather-card .card-header {
+    display: flex;
+    justify-content: space-between; 
+    font-size: 14px; 
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+.weather-card .card-header span:last-child {
+    display: inline; 
+}
+.weather-card:nth-child(2) {
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+.weather-card:nth-child(2) .card-header {
+     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 20px 20px 50px 20px; 
+    min-height: 250px; 
+    text-align: left; 
+}
+.city-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+.card-body h3 {
+    font-size: 80px; 
+    margin: 5px 0 10px 0;
+    font-weight: normal;
+}
+.card-body .max-temp { 
+    font-size: 25px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.card-body .min-temp {
+    font-size: 18px; 
+    display: block; 
+    opacity: 0.7;
+}
+/* ===================design icon denamic================================*/
+.card-body img {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.weather-card:first-child .card-body img {
+    display: block; 
+    width: 50px; 
+    height: 50px;
+    margin-left: 0; 
+    margin-top: 10px;
+    margin-bottom: 5px; 
+}
+
+
+.card-body p {
+    font-size: 14px;
+    color: #009ad8;
+    margin-bottom: 20px;
+    margin-top: 5px; 
+}
+
+.weather-card:nth-child(n+2) .card-body {
+    text-align: center;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+.details i {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 5px;
+}
+
+/* ============================++=design contact page =+++=========================== */
+.contact-page {
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    min-height: 80vh;
+    background-color: #2b3035; 
+}
+
+.breadcrumb {
+    margin-bottom: 30px;
+    padding: 15px 30px; 
+    background-color: #2b3035 ; 
+    border-radius: 8px; 
+}
+.breadcrumb a {
+    color: #009ad8;
+    text-decoration: none;
+}
+.contact-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+.contact-info {
+    flex: 1;
+    background-color: #262933; 
+    padding: 30px;
+    border-radius: 10px;
+    align-self: stretch; 
+}
+.contact-info .map-placeholder {
+    height: 200px;
+    background-color: #262933;
+    margin-bottom: 20px;
+}
+.contact-info p {
+    margin: 15px 0;
+}
+.contact-info i {
+    color: #009ad8;
+    margin-right: 10px;
+}
+
+.contact-form {
+    flex: 2;
+}
+.contact-form h2 {
+    margin-top: 0;
+    font-size: 32px;
+    font-weight: normal;
+}
+.contact-form p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 20px; 
+    margin-bottom: 15px;
+    background-color: #1e202b; 
+    border: 1px solid #444; 
+    color: white;
+    border-radius: 30px; 
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease-in-out; 
+}
+.contact-form input:hover,
+.contact-form textarea:hover {
+    border-color: #009ad8;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none; 
+    border-color: #009ad8; 
+}
+
+
+.form-row input {
+    flex: 1;
+}
+.contact-form textarea {
+    border-radius: 10px; 
+}
+.submit-btn {
+    background-color: #009ad8;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 30px;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+}
+
+
+/* ==============================================
+         تنسيقات شريط التذييل (Footer)
+==============================================
+*/
+#main-footer {
+    background-color: #2d3036; 
+    padding: 0; 
+}
+.footer-top {
+    background-color: #22252a; 
+    padding: 30px 0;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.subscribe-section {
+    display: flex;
+    width: 800px;
+    background-color: #1e202b;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 5px;
+}
+.subscribe-section input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 20px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+}
+.subscribe-btn {
+    background-color: #009ad8;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.social-icons a {
+    margin: 0 5px;
+    color: #009ad8;
+    font-size: 18px;
+    transition: color 0.3s;
+    text-decoration: none;
+    background-color: #1e202b; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-icons a:hover {
+    color: #fff; 
+    background-color: #009ad8; 
+}
+
+.copyright-section {
+    background-color:#22252a; 
+    padding: 15px 0;
+    text-align: center;
+}
+.copyright {
+    margin: 0; 
+    font-size: 12px;
+    opacity: 0.6;
+}
