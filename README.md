@@ -12,7 +12,7 @@ A dynamic weather application that provides real-time weather updates for differ
 * **HTML5 & CSS3**
 * **JavaScript** (ES6+)
 * **Weather API** (e.g., OpenWeatherMap)
-* **Bootstrap** (Optional - *لو كنتِ استخدمتيه*)
+* **Bootstrap** 
 
 ## 🌐 Live Demo
 Check out the live weather app here: [Live Link](https://nadiamegahed18.github.io/Weather-Project/)
